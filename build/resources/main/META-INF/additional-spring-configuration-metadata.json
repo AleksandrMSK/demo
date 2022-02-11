@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "spring.datasource.platform",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.platform."
+    },
+    {
+      "name": "spring.liquibase.change-log",
+      "type": "java.lang.String",
+      "description": "Description for spring.liquibase.change-log."
+    }
+  ] }

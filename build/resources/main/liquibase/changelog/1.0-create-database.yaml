@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Aleksandr Moskalchuk
+      changes:
+        - createTable:
+            tableName: users
+            remarks: Table with users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: user_pk
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(100)
+                  constraints:
+                    unique: true
+                    uniqueConstraintName: user_email_uq
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(48)
+              - column:
+                  name: last_name
+                  type: varchar(48)
+              - column:
+                  name: patronymic
+                  type: varchar(30)
+              - column:
+                  name: username
+                  type: varchar(48)
+                  constraints:
+                    unique: true
+                    uniqueConstraintName: user_username_uq
+                    nullable: false
+              - column:
+                  name: phoneNumber
+                  type: varchar(20)
+              - column:
+                  name: password
+                  type: varchar(30)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: varchar(30)
+              - column:
+                  name: role
+                  type: varchar(30)
+      rollback:
+        - dropTable:
+            tableName: users

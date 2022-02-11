@@ -1,0 +1,14 @@
+server:
+  port: 7788
+spring:
+  datasource:
+    platform: postgres
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/board
+    username: admin
+    password: admin
+  liquibase:
+    change-log: classpath:liquibase/db.changelog-master.yaml
+    url: jdbc:postgresql://localhost:5432/board?serverTimezone=UTC
+    user: admin
+    password: admin
