@@ -1,0 +1,30 @@
+#server:
+#  port: 8085
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8081/eureka/
+#    register-with-eureka: true
+#    fetch-registry: true
+#  instance:
+#    instance-id: BOARD-INSTANCE
+#
+#spring:
+#  application:
+#    name: BOARD
+#  liquibase:
+#    enabled: true
+#    change-log: classpath:db/changelog/db.changelog-master.yaml
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/board?serverTimezone=UTC
+#    username: admin
+#    password: admin
+#    driver-class-name: org.postgresql.Driver
+#  jpa:
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    hibernate:
+#      ddl-auto: none
+#  h2:
+#    console:
+#      enabled: true

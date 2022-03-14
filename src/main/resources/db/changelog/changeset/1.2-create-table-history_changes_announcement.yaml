@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: the first
+      author: Aleksandr Moskalchuk
+      changes:
+        - createTable:
+            tableName: tb_history_changes_announcement
+            remarks: Table with history changes announcement
+            columns:
+              - column:
+                  name: id
+                  type: varchar(36)
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: history_changes_announcement_pk
+                    nullable: false
+              - column:
+                  name: announcement_id
+                  type: varchar(36)
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_history_announcements
+                    references: tb_announcements (announcement_id)
+              - column:
+                  name: time_create
+                  type: timestamp
+              - column:
+                  name: time_update
+                  type: timestamp
+      rollback:
+        - dropTable:
+            tableName: tb_history_changes_announcement

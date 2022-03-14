@@ -1,0 +1,10 @@
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  application:
+    name: demo-service
+  cloud:
+    config:
+      uri: http://localhost:8888
+      enable: true

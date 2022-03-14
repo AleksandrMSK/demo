@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: the first
+      author: Aleksandr Moskalchuk
+      changes:
+        - createTable:
+            tableName: tb_announcements
+            remarks: Table with announcements
+            columns:
+              - column:
+                  name: announcement_id
+                  type: varchar(36)
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: announcements_pk
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(150)
+              - column:
+                  name: body_announcement
+                  type: varchar(2000)
+              - column:
+                  name: status
+                  type: varchar(30)
+              - column:
+                  name: type
+                  type: varchar(30)
+              - column:
+                  name: person_id
+                  type: varchar(36)
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_person_announcements
+                    references: tb_persons (person_id)
+              - column:
+                  name: time_create
+                  type: timestamp
+              - column:
+                  name: time_update
+                  type: timestamp
+      rollback:
+        - dropTable:
+            tableName: tb_announcements
