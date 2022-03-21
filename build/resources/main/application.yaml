@@ -1,16 +1,17 @@
 server:
   port: 8085
-
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8081/eureka/
+    register-with-eureka: true
+    fetch-registry: true
   instance:
     instance-id: BOARD-INSTANCE
 
 spring:
   application:
-    name: BOARD
+    name: board-service
   liquibase:
     enabled: true
     change-log: classpath:db/changelog/db.changelog-master.yaml
